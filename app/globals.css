@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* Tokens follow DESIGN.md. Change DESIGN.md first. Hex copies of the brand
+   colors live in lib/brand.ts for the drawn images. */
+
+@theme {
+  --color-*: initial;
+  --color-paper: #f3f6f4;
+  --color-surface: #ffffff;
+  --color-sunk: #e6ece9;
+  --color-line: #d2dcd7;
+  --color-ink: #13262b;
+  --color-ink-muted: #51646a;
+  --color-brand: #0e6b66;
+  --color-brand-deep: #0a524e;
+  --color-brand-soft: #dcefec;
+  --color-gap: #a85a12;
+  --color-gap-soft: #f8e8d6;
+  --color-night: #13262b;
+  --color-night-raised: #1f3a41;
+  --color-night-line: #33535b;
+  --color-on-night: #f3f6f4;
+  --color-on-night-muted: #a6bcc0;
+  --color-bubble-out: #0e6b66;
+  --color-gap-on-night: #f0c08f;
+  --color-brand-on-night: #93d5ce;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+
+  --font-display: var(--font-bricolage), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-schibsted), system-ui, sans-serif;
+
+  --text-*: initial;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-headline: 1.875rem;
+  --text-headline--line-height: 1.12;
+  --text-headline--letter-spacing: -0.01em;
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.3;
+  --text-body: 1rem;
+  --text-body--line-height: 1.55;
+  --text-label: 0.875rem;
+  --text-label--line-height: 1.4;
+  --text-micro: 0.75rem;
+  --text-micro--line-height: 1.35;
+
+  --ease-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --text-display: 4rem;
+  }
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Motion (DESIGN.md, Motion). Content is visible by default; these only
+   run when the visitor's system allows motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .arrive {
+    animation: arrive 320ms var(--ease-soft) both;
+  }
+  .hairline-draw {
+    transform-origin: left;
+    animation: hairline 600ms var(--ease-soft) both;
+  }
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes hairline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "docs/design/logos.html"
+        ],
+        "createdAt": "2026-11-10T22:55:22.104Z",
+        "reason": "Claude's design call in DESIGN.md (The idea): paper vs night phone is the concept; logos page mirrors the app tokens"
+      }
+    ]
+  }
+}
