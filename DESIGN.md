@@ -53,7 +53,7 @@ Bricolage Grotesque for display, headline and title. Schibsted Grotesk for every
 
 ## Logo
 
-**Not picked yet.** The founder picks from `docs/design/logos.html` (A "Slot filled", B "Back on the books", C "Empty chair, filled"). Until then the app ships option A (a calendar page with a check, `PRODUCT_MARK_SVG` in `lib/brand.ts`) so the build can run. When picked, write the pick here and update `lib/brand.ts`, `app/icon.svg` and `docs/banner.svg`.
+**Option A, "Slot filled"** (picked by the founder 2026-11-11 from `docs/design/logos.html`): a calendar page with a check, on teal. `PRODUCT_MARK_SVG` in `lib/brand.ts`, `app/icon.svg` and `docs/banner.svg` already ship it.
 
 The Sample Business, Pinewhistle Dental, has its own mark (`PINEWHISTLE_MARK_SVG`): a small pine on ink. It shows only inside the demo.
 

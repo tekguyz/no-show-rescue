@@ -17,7 +17,7 @@ Next.js rules: @AGENTS.md
 ## Rules
 
 - Follow `DESIGN.md` for the look. Colors and type sizes are tokens in `app/globals.css`; Tailwind's own colors and sizes are off. Change `DESIGN.md` first.
-- The marks live once, in `lib/brand.ts`. `app/icon.svg` must equal `PRODUCT_MARK_SVG` (a test checks it). The logo is not picked yet (issue #1); the founder picks from `docs/design/logos.html`.
+- The marks live once, in `lib/brand.ts`. `app/icon.svg` must equal `PRODUCT_MARK_SVG` (a test checks it). Logo: option A "Slot filled", picked 2026-11-11 (`DESIGN.md`).
 - Never a price, a statistic, a setup-time claim or a phone number, real or placeholder. `app/__tests__/guards.test.ts` checks the last two.
 - TEKGUYZ appears only in the small "Built by TEKGUYZ" credit. Never in the app name, URL or screens.
 - Never a real business name or a real person. Pinewhistle Dental was searched on 2026-11-11 and nothing uses it. Every patient is a first name and an initial.
