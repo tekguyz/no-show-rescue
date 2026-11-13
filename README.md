@@ -1,10 +1,10 @@
 <p align="center"><img src="docs/banner.svg" alt="No-Show Rescue" width="100%"></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-demo%20built-0e6b66?labelColor=f3f6f4" alt="Status: demo built">
-  <img src="https://img.shields.io/badge/Next.js-16-13262b?labelColor=f3f6f4" alt="Next.js 16">
-  <img src="https://img.shields.io/badge/backend-none-0e6b66?labelColor=f3f6f4" alt="No backend">
-  <img src="https://img.shields.io/badge/tests-Vitest-a85a12?labelColor=f3f6f4" alt="Tests: Vitest">
+  <img src="https://img.shields.io/badge/status-demo%20built-ff5b4a?labelColor=ece8fb" alt="Status: demo built">
+  <img src="https://img.shields.io/badge/Next.js-16-13262b?labelColor=ece8fb" alt="Next.js 16">
+  <img src="https://img.shields.io/badge/backend-none-ff5b4a?labelColor=ece8fb" alt="No backend">
+  <img src="https://img.shields.io/badge/tests-Vitest-a85a12?labelColor=ece8fb" alt="Tests: Vitest">
 </p>
 
 **Fewer empty chairs: a landing page and a one-click demo of no-show rescue for dental and vet practices.**

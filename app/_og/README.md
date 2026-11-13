@@ -4,6 +4,6 @@
 
 | File | Font | Source |
 |---|---|---|
-| `bricolage-700.woff` | Bricolage Grotesque Bold | npm `@fontsource/bricolage-grotesque`, `files/bricolage-grotesque-latin-700-normal.woff` |
-| `schibsted-400.woff` | Schibsted Grotesk Regular | npm `@fontsource/schibsted-grotesk`, `files/schibsted-grotesk-latin-400-normal.woff` |
-| `schibsted-600.woff` | Schibsted Grotesk SemiBold | npm `@fontsource/schibsted-grotesk`, `files/schibsted-grotesk-latin-600-normal.woff` |
+| `outfit-400.woff` | Outfit Regular | npm `@fontsource/outfit`, `files/outfit-latin-400-normal.woff` |
+| `outfit-600.woff` | Outfit SemiBold | npm `@fontsource/outfit`, `files/outfit-latin-600-normal.woff` |
+| `outfit-700.woff` | Outfit Bold | npm `@fontsource/outfit`, `files/outfit-latin-700-normal.woff` |
