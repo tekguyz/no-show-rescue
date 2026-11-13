@@ -55,7 +55,7 @@ export function Desk({ run }: { run: Run }) {
                 key={`${r.time}-${r.name}`}
                 className={`relative grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-3 border-t border-line py-2.5 first:border-t-0 sm:grid-cols-[4.5rem_minmax(0,1fr)_auto] ${r.fresh ? "arrive" : ""}`}
               >
-                <span className="text-label tabular-nums">{r.time}</span>
+                <span className="text-label">{r.time}</span>
                 <span className="min-w-0">
                   <span className={`block truncate text-label ${r.name === "Open" ? "text-gap" : ""}`}>
                     {r.name}
