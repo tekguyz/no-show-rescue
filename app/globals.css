@@ -5,30 +5,30 @@
 
 @theme {
   --color-*: initial;
-  --color-paper: #f3f6f4;
-  --color-surface: #ffffff;
-  --color-sunk: #e6ece9;
-  --color-line: #d2dcd7;
-  --color-ink: #13262b;
-  --color-ink-muted: #51646a;
-  --color-brand: #0e6b66;
-  --color-brand-deep: #0a524e;
-  --color-brand-soft: #dcefec;
-  --color-gap: #a85a12;
-  --color-gap-soft: #f8e8d6;
-  --color-night: #13262b;
-  --color-night-raised: #1f3a41;
-  --color-night-line: #33535b;
-  --color-on-night: #f3f6f4;
-  --color-on-night-muted: #a6bcc0;
-  --color-bubble-out: #0e6b66;
-  --color-gap-on-night: #f0c08f;
-  --color-brand-on-night: #93d5ce;
+  --color-paper: #ece8fb;
+  --color-surface: #f7f5ff;
+  --color-sunk: #dfd9f5;
+  --color-line: #c8c1e8;
+  --color-ink: #221d3f;
+  --color-ink-muted: #565071;
+  --color-brand: #ff5b4a;
+  --color-brand-deep: #ff7b6d;
+  --color-brand-soft: #ffcfc8;
+  --color-gap: #a8200f;
+  --color-gap-soft: #fde1dc;
+  --color-night: #221d3f;
+  --color-night-raised: #362f5c;
+  --color-night-line: #4a4275;
+  --color-on-night: #f7f5ff;
+  --color-on-night-muted: #b9b3dc;
+  --color-bubble-out: #ff5b4a;
+  --color-gap-on-night: #ff9d90;
+  --color-brand-on-night: #ff9d90;
   --color-white: #ffffff;
   --color-transparent: transparent;
 
-  --font-display: var(--font-bricolage), "Arial Narrow", sans-serif;
-  --font-sans: var(--font-schibsted), system-ui, sans-serif;
+  --font-display: var(--font-outfit), system-ui, sans-serif;
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
 
   --text-*: initial;
   --text-display: 2.75rem;
@@ -67,7 +67,7 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-brand);
+  outline: 3px solid var(--color-ink);
   outline-offset: 2px;
 }
 
@@ -91,4 +91,14 @@ body {
 @keyframes hairline {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
+}
+
+/* Display, headline and title are Outfit 700 (DESIGN.md, Type). */
+@layer base {
+  h1, h2, h3, .font-display {
+    font-weight: 700;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
 }
