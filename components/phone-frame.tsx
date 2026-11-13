@@ -30,18 +30,18 @@ export function PhoneFrame({ time, className = "", children }: Props) {
 
 // Signal, wifi and battery. Static, so built once.
 const statusIcons = (
-  <span className="flex w-14 items-center justify-end gap-1.5">
-    <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor">
+  <span className="flex items-center justify-end gap-1">
+    <svg width="15" height="10" viewBox="0 0 17 11" fill="currentColor">
       <rect x="0" y="7" width="3" height="4" rx="1" />
       <rect x="4.5" y="5" width="3" height="6" rx="1" />
       <rect x="9" y="2.5" width="3" height="8.5" rx="1" />
       <rect x="13.5" y="0" width="3" height="11" rx="1" />
     </svg>
-    <svg width="15" height="11" viewBox="0 0 15 11" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+    <svg width="14" height="10" viewBox="0 0 15 11" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
       <path d="M1 3.8a9.2 9.2 0 0 1 13 0M3.4 6.3a5.8 5.8 0 0 1 8.2 0" />
       <circle cx="7.5" cy="9.2" r="1.1" fill="currentColor" stroke="none" />
     </svg>
-    <svg width="24" height="12" viewBox="0 0 24 12" fill="none">
+    <svg width="22" height="11" viewBox="0 0 24 12" fill="none">
       <rect x="0.6" y="0.6" width="20.3" height="10.8" rx="3" stroke="currentColor" strokeOpacity=".45" strokeWidth="1.2" />
       <rect x="2.3" y="2.3" width="14" height="7.4" rx="1.6" fill="currentColor" />
       <path d="M22.4 4v4" stroke="currentColor" strokeOpacity=".45" strokeWidth="1.4" strokeLinecap="round" />
@@ -51,9 +51,9 @@ const statusIcons = (
 
 function StatusBar({ time }: { time: string }) {
   return (
-    <div aria-hidden className="relative flex h-11 shrink-0 items-center justify-between px-7 pt-1.5 text-on-night">
+    <div aria-hidden className="relative flex h-11 shrink-0 items-center justify-between px-6 pt-1.5 text-on-night">
       <span className="w-14 text-label">{time}</span>
-      <span className="absolute top-2.5 left-1/2 h-[1.6rem] w-[34%] -translate-x-1/2 rounded-full bg-night-deep" />
+      <span className="absolute top-2.5 left-1/2 h-[1.6rem] w-[28%] -translate-x-1/2 rounded-full bg-night-deep" />
       {statusIcons}
     </div>
   );
