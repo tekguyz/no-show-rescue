@@ -14,6 +14,7 @@ colors:
   gap: "#A85A12"
   gap-soft: "#F8E8D6"
   night: "#13262B"
+  night-deep: "#0B181B"
   night-raised: "#1F3A41"
   on-night: "#F3F6F4"
   on-night-muted: "#A6BCC0"
@@ -48,8 +49,29 @@ Bricolage Grotesque for display, headline and title. Schibsted Grotesk for every
 ## Layout
 
 - Landing page: one column up to 1024px, a max width of 72rem. 16px side gutter on phones.
-- Demo: from 1024px, the phone (fixed 22rem wide) on the left and the front desk on the right. Below 1024px, two tabs, "Patient's phone" and "Front desk"; the desk tab shows an amber dot when something changes there.
+- Demo: from 1024px, the phone (sized to the window, see Phone frame) on the left and the front desk on the right. Below 1024px, two tabs, "Patient's phone" and "Front desk"; the desk tab shows an amber dot when something changes there.
 - Touch targets are at least 44px.
+
+## Shape
+
+Outlined (assigned 2026-11-13, tekguyz/no-show-rescue#10, so the demos stop sharing one template). `app/__tests__/guards.test.ts` pins it.
+
+1. **4px corners** (`rounded`) on buttons, panels, tags and the step row. No `rounded-xl`, `rounded-2xl` or larger, no pill buttons.
+2. **Only the main action is filled:** "Try the demo" (teal) and the demo clock's skip button (ink). Every other button is a 1.5px outline with no fill: the patient's reply buttons, "Leave a review", the view tabs.
+3. **Panels are outlined, not white cards:** a 1px `line` border on paper, no fill. The landing page's "How it works" band keeps its full-width `surface` fill; it is a band, not a card.
+4. **No shadows** anywhere. Depth comes from the outline.
+5. Round stays only where a thing is round in life: the practice's avatar, the amber "something changed" dot, the phone's island, home bar and device corners, and message bubbles.
+
+Button looks live once, in `components/buttons.ts`.
+
+## Phone frame
+
+`components/phone-frame.tsx`, used by the demo's phone and the landing page's still picture (`claude-config/LOOKS.md`, "Phone and browser frames").
+
+- A device, not a box: a 3px `night-line` edge band with side buttons, a `night-deep` bezel, rounded device corners, a status bar with the time (from the demo clock), an island, signal, wifi and battery, and a home bar.
+- The messages header is the app's own: a back arrow, the Pinewhistle mark as the avatar, the practice name and "Text message".
+- Real proportions, 9:19.5. The `.phone-fit` class in `app/globals.css` sets its height from the window (`clamp(32rem, 100dvh - 18rem, 47.5rem)` from 1024px) and its width from the ratio, so it never runs off the bottom at 1440 x 900; the thread scrolls inside it.
+- Colors are the night tokens only. Bubbles keep soft message corners; the reply buttons below them are outlined at 4px.
 
 ## Logo
 

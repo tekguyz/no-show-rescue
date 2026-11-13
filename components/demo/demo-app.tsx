@@ -95,12 +95,12 @@ export function DemoApp() {
           </p>
         </div>
 
-        <ol className="mt-4 flex flex-wrap gap-2 text-micro" aria-label="Where you are">
+        <ol className="mt-3 flex flex-wrap gap-2 text-micro" aria-label="Where you are">
           {steps.map((label, i) => (
             <li
               key={label}
               aria-current={i === done ? "step" : undefined}
-              className={`rounded-full px-3 py-1.5 font-semibold ${i < done ? "bg-brand-soft text-brand" : i === done ? "bg-ink text-paper" : "bg-sunk text-ink-muted"}`}
+              className={`rounded border px-2.5 py-1.5 font-semibold ${i < done ? "border-brand-soft bg-brand-soft text-brand" : i === done ? "border-ink bg-ink text-paper" : "border-line text-ink-muted"}`}
             >
               {i + 1}. {label}
             </li>
@@ -109,7 +109,7 @@ export function DemoApp() {
 
         <ClockBar run={run} typing={typing} onSkip={skip} />
 
-        <div role="tablist" aria-label="Demo view" className="mt-5 grid grid-cols-2 gap-1 rounded-full bg-sunk p-1 lg:hidden">
+        <div role="tablist" aria-label="Demo view" className="mt-5 grid grid-cols-2 gap-1 rounded border border-line p-1 lg:hidden">
           {(
             [
               ["phone", "Patient's phone"],
@@ -124,7 +124,7 @@ export function DemoApp() {
               aria-selected={tab === id}
               aria-controls={`panel-${id}`}
               onClick={() => showTab(id)}
-              className={`relative min-h-11 rounded-full text-label ${tab === id ? "bg-surface text-ink shadow-sm" : "text-ink-muted"}`}
+              className={`relative min-h-11 rounded-[2px] border-[1.5px] text-label transition-colors ${tab === id ? "border-ink text-ink" : "border-transparent text-ink-muted hover:text-ink"}`}
             >
               {label}
               {id === "desk" && unseen && tab !== "desk" && <span className="absolute top-2.5 right-4 size-2.5 rounded-full bg-gap" aria-label="Something changed" />}
@@ -132,7 +132,7 @@ export function DemoApp() {
           ))}
         </div>
 
-        <div className="mt-5 grid gap-8 lg:grid-cols-[22rem_minmax(0,1fr)] lg:items-start">
+        <div className="mt-5 grid gap-8 lg:grid-cols-[auto_minmax(0,1fr)] lg:items-start">
           <section id="panel-phone" aria-label="Patient's phone" className={`${tab === "phone" ? "" : "hidden"} lg:sticky lg:top-4 lg:block`}>
             <Phone key={resets} run={run} shown={shown} onReply={onReply} onSeeDesk={() => showTab("desk")} />
           </section>
@@ -160,7 +160,7 @@ function ClockBar({ run, typing, onSkip }: { run: Run; typing: boolean; onSkip: 
   const label = run.phase === "visit-day" ? "Skip ahead 15 minutes" : "Skip to after the next visit";
 
   return (
-    <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3 rounded-2xl border border-line bg-surface px-4 py-3">
+    <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-3 rounded border border-line px-4 py-3">
       <p className="flex items-center gap-2 font-display text-title">
         <ClockIcon className="text-brand" /> {run.clock}
       </p>
@@ -172,7 +172,7 @@ function ClockBar({ run, typing, onSkip }: { run: Run; typing: boolean; onSkip: 
           type="button"
           onClick={onSkip}
           disabled={!ready}
-          className="inline-flex min-h-11 items-center justify-center rounded-full bg-ink px-5 text-label text-paper transition-colors hover:bg-night-raised disabled:cursor-not-allowed disabled:bg-sunk disabled:text-ink-muted"
+          className="inline-flex min-h-11 items-center justify-center rounded border-[1.5px] border-ink bg-ink px-5 text-label text-paper transition-colors hover:border-night-raised hover:bg-night-raised disabled:cursor-not-allowed disabled:border-line disabled:bg-transparent disabled:text-ink-muted"
         >
           {label}
         </button>
