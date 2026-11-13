@@ -17,6 +17,7 @@
   --color-gap: #a85a12;
   --color-gap-soft: #f8e8d6;
   --color-night: #13262b;
+  --color-night-deep: #0b181b;
   --color-night-raised: #1f3a41;
   --color-night-line: #33535b;
   --color-on-night: #f3f6f4;
@@ -64,6 +65,37 @@ html {
 body {
   font-family: var(--font-sans);
   background: var(--color-paper);
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+::selection {
+  background: var(--color-brand-soft);
+  color: var(--color-ink);
+}
+
+/* The drawn phone (DESIGN.md, Phone frame): real 9:19.5 proportions. Its
+   height follows the window so it never runs off the bottom; the thread
+   scrolls inside it. */
+.phone-fit {
+  --phone-h: min(47.5rem, calc(100dvh - 6rem));
+  height: var(--phone-h);
+  width: calc(var(--phone-h) * 9 / 19.5);
+  max-width: 100%;
+}
+
+@media (min-width: 64rem) {
+  .phone-fit {
+    --phone-h: clamp(32rem, calc(100dvh - 18rem), 47.5rem);
+  }
+}
+
+.night-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-night-line) transparent;
 }
 
 :focus-visible {

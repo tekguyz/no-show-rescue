@@ -52,4 +52,20 @@ describe("guards", () => {
     const config = readFileSync(join(root, "next.config.ts"), "utf8");
     expect(config).not.toMatch(/X-Frame-Options|frame-ancestors/i);
   });
+
+  // DESIGN.md, Shape: outlined, 4px corners, no shadows, no pills.
+  const screens = sources.filter(({ path }) => /\.tsx?$/.test(path) && !path.endsWith(".svg"));
+
+  it("draws no shadows and no soft cards", () => {
+    for (const { path, text } of screens) expect(text, path).not.toMatch(/\bshadow(-|\b)|rounded-(xl|2xl|3xl)\b/);
+  });
+
+  it("never rounds a button into a pill", () => {
+    for (const { path, text } of screens) {
+      const buttons = text.match(/<(button|Link)\b[^>]*className=[^>]*>/g) ?? [];
+      for (const b of buttons) expect(b, path).not.toMatch(/rounded-full/);
+    }
+    const shared = readFileSync(join(root, "components", "buttons.ts"), "utf8");
+    expect(shared).not.toMatch(/rounded-full/);
+  });
 });

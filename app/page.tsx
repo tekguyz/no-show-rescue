@@ -2,6 +2,7 @@ import Link from "next/link";
 import { primaryButton } from "@/components/buttons";
 import { CalendarIcon, StarIcon, TextIcon, UsersIcon } from "@/components/icons";
 import { ProductLogo } from "@/components/logo";
+import { PhoneFrame, ThreadHeader } from "@/components/phone-frame";
 import { business } from "@/lib/demo/business";
 
 // The landing page (DEMO-STANDARD.md, "What they get"). It sells the idea by
@@ -65,7 +66,7 @@ export default function LandingPage() {
             <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((s, i) => (
                 <li key={s.title} className="flex flex-col gap-2">
-                  <span className={`flex size-9 items-center justify-center rounded-full font-display text-label ${i === 1 ? "bg-gap-soft text-gap" : "bg-brand-soft text-brand"}`}>
+                  <span className={`flex size-9 items-center justify-center rounded border-[1.5px] font-display text-label ${i === 1 ? "border-gap text-gap" : "border-brand text-brand"}`}>
                     {i + 1}
                   </span>
                   <h3 className="font-display text-title">{s.title}</h3>
@@ -122,23 +123,23 @@ export default function LandingPage() {
   );
 }
 
-/** A still picture of the flow, drawn in the page's own parts. Decorative. */
+/** A still picture of the flow, drawn with the demo's own phone. Decorative. */
 function HeroPreview() {
   return (
-    <div aria-hidden className="relative mx-auto w-full max-w-[24rem]">
-      <div className="rounded-[2.5rem] bg-night p-2.5 shadow-[0_24px_60px_-20px_rgb(19_38_43/0.45)]">
-        <div className="flex flex-col gap-3 rounded-[2rem] bg-night px-4 pt-5 pb-28 text-on-night">
-          <p className="text-micro font-semibold text-on-night-muted">{business.name} · Text message</p>
-          <p className="max-w-[85%] rounded-2xl rounded-bl-md bg-bubble-out px-3.5 py-2.5 text-label font-normal text-white">
+    <div aria-hidden className="relative mx-auto w-full max-w-[24rem] pb-10">
+      <PhoneFrame time="10:16" className="mx-auto aspect-[9/19.5] w-[18.5rem] max-w-full">
+        <ThreadHeader />
+        <div className="flex flex-col gap-2 px-3.5 py-3">
+          <p className="max-w-[82%] rounded-[1.15rem] rounded-bl-[0.35rem] bg-bubble-out px-3.5 py-2 text-label font-normal text-white">
             Hi Lena, we missed you at 10:00 AM today. No worries. Want a new time?
           </p>
-          <p className="self-end rounded-2xl rounded-br-md bg-night-raised px-3.5 py-2.5 text-label font-normal">Thu 2:30 PM</p>
-          <p className="max-w-[85%] rounded-2xl rounded-bl-md bg-bubble-out px-3.5 py-2.5 text-label font-normal text-white">
+          <p className="self-end rounded-[1.15rem] rounded-br-[0.35rem] bg-night-raised px-3.5 py-2 text-label font-normal">Thu 2:30 PM</p>
+          <p className="max-w-[82%] rounded-[1.15rem] rounded-bl-[0.35rem] bg-bubble-out px-3.5 py-2 text-label font-normal text-white">
             You&apos;re booked for Thu 2:30 PM. We&apos;ll send a reminder the day before.
           </p>
         </div>
-      </div>
-      <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-line bg-surface p-4 text-ink shadow-lg">
+      </PhoneFrame>
+      <div className="absolute inset-x-0 bottom-0 rounded border-[1.5px] border-ink bg-surface p-4 text-ink sm:-right-6 sm:left-auto sm:w-[19rem]">
         <p className="flex items-center gap-2 text-label">
           <UsersIcon width={16} height={16} className="text-brand" /> Open chair filled from the waitlist
         </p>
@@ -156,7 +157,7 @@ function SchedulePreview() {
     ["11:00 AM", "Dev P.", "Confirmed", "muted"],
   ] as const;
   return (
-    <div aria-hidden className="rounded-2xl border border-line bg-surface p-4">
+    <div aria-hidden className="rounded border border-line p-4">
       <p className="flex items-center gap-2 font-display text-title">
         <CalendarIcon className="text-brand" /> Tuesday
       </p>
@@ -167,7 +168,7 @@ function SchedulePreview() {
               <span className="w-18 shrink-0">{time}</span>
               <span className="truncate">{name}</span>
             </span>
-            <span className={`shrink-0 rounded-full px-2.5 py-1 text-micro font-semibold ${tone === "brand" ? "bg-brand-soft text-brand" : "bg-sunk text-ink-muted"}`}>{badge}</span>
+            <span className={`shrink-0 rounded px-2 py-0.5 text-micro font-semibold ${tone === "brand" ? "bg-brand-soft text-brand" : "bg-sunk text-ink-muted"}`}>{badge}</span>
           </li>
         ))}
       </ul>

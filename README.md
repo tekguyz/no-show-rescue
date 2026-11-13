@@ -15,10 +15,10 @@ Not deployed yet. See issue #1 for what is left.
 
 | Row | |
 |---|---|
-| Phase | Demo built, not deployed |
-| Shipped | Landing page and one-click demo, in the repo |
-| Next | Logo pick, Vercel deploy, showcase pictures: issue #1 |
-| Updated | 2026-11-11 |
+| Phase | Live on `no-show-rescue.vercel.app` |
+| Shipped | Landing page and one-click demo; outlined shape and a drawn phone frame (#10) |
+| Next | Nothing open |
+| Updated | 2026-11-13 |
 
 ## What it does
 
