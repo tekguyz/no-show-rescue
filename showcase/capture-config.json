@@ -1,0 +1,323 @@
+{
+  "name": "no-show-rescue",
+  "hideBanner": [
+    "Leave the demo"
+  ],
+  "hideText": [
+    "Built by TEKGUYZ"
+  ],
+  "hideSelector": [
+    "[data-demo-banner]",
+    "[role=tablist]"
+  ],
+  "css": "#main { padding-bottom: 160px; } .phone-fit { --phone-h: calc(100dvh - 3rem); }",
+  "themes": [
+    "light"
+  ],
+  "enter": [
+    {
+      "goto": "https://no-show-rescue.vercel.app"
+    },
+    {
+      "click": "Try the demo"
+    },
+    {
+      "waitUrl": "**/demo"
+    }
+  ],
+  "screens": [
+    {
+      "name": "reminder",
+      "device": "desktop",
+      "steps": []
+    },
+    {
+      "name": "new-time",
+      "device": "desktop",
+      "steps": [
+        {
+          "click": "Don't reply"
+        },
+        {
+          "click": "Skip ahead 15 minutes"
+        },
+        {
+          "wait": 1500
+        },
+        {
+          "wait": 800
+        }
+      ]
+    },
+    {
+      "name": "slot-filled",
+      "device": "desktop",
+      "steps": [
+        {
+          "click": "Thu 2:30 PM"
+        },
+        {
+          "click": "Skip to after the next visit"
+        },
+        {
+          "wait": 800
+        }
+      ]
+    },
+    {
+      "name": "new-time",
+      "device": "phone",
+      "steps": [
+        {
+          "click": "Don't reply"
+        },
+        {
+          "click": "Skip ahead 15 minutes"
+        },
+        {
+          "wait": 1500
+        },
+        {
+          "wait": 800
+        }
+      ]
+    },
+    {
+      "name": "front-desk",
+      "device": "phone",
+      "steps": [
+        {
+          "click": "Thu 2:30 PM"
+        },
+        {
+          "click": "Skip to after the next visit"
+        },
+        {
+          "wait": 800
+        },
+        {
+          "click": "Front desk"
+        },
+        {
+          "wait": 800
+        }
+      ]
+    },
+    {
+      "name": "reminder",
+      "device": "feed",
+      "steps": [
+        {
+          "wait": 2500
+        },
+        {
+          "scrollTo": {
+            "selector": "#panel-phone"
+          },
+          "offset": 20
+        }
+      ]
+    },
+    {
+      "name": "new-time",
+      "device": "feed",
+      "steps": [
+        {
+          "click": "Don't reply"
+        },
+        {
+          "wait": 1500
+        },
+        {
+          "click": "Skip ahead 15 minutes"
+        },
+        {
+          "wait": 4000
+        },
+        {
+          "scrollTo": {
+            "selector": "#panel-phone"
+          },
+          "offset": 20
+        }
+      ]
+    },
+    {
+      "name": "slot-filled",
+      "device": "feed",
+      "steps": [
+        {
+          "click": "Thu 2:30 PM"
+        },
+        {
+          "wait": 2500
+        },
+        {
+          "click": "See the front desk"
+        },
+        {
+          "wait": 800
+        },
+        {
+          "scrollTo": "Tuesday's schedule",
+          "offset": 12
+        }
+      ]
+    },
+    {
+      "name": "reminder",
+      "device": "stories",
+      "steps": [
+        {
+          "wait": 2500
+        },
+        {
+          "scrollTo": {
+            "selector": "#panel-phone"
+          },
+          "offset": 20
+        }
+      ]
+    },
+    {
+      "name": "reminder",
+      "device": "stories",
+      "steps": [
+        {
+          "scrollTo": {
+            "selector": "#panel-phone"
+          },
+          "offset": 20
+        }
+      ]
+    },
+    {
+      "name": "new-time",
+      "device": "stories",
+      "steps": [
+        {
+          "click": "Don't reply"
+        },
+        {
+          "wait": 1500
+        },
+        {
+          "click": "Skip ahead 15 minutes"
+        },
+        {
+          "wait": 4000
+        },
+        {
+          "scrollTo": {
+            "selector": "#panel-phone"
+          },
+          "offset": 20
+        }
+      ]
+    },
+    {
+      "name": "reminder",
+      "device": "phone-card",
+      "steps": [
+        {
+          "wait": 2500
+        },
+        {
+          "scrollTo": {
+            "selector": "#panel-phone"
+          },
+          "offset": 20
+        }
+      ]
+    },
+    {
+      "name": "new-time",
+      "device": "phone-card",
+      "steps": [
+        {
+          "click": "Don't reply"
+        },
+        {
+          "wait": 1500
+        },
+        {
+          "click": "Skip ahead 15 minutes"
+        },
+        {
+          "wait": 4000
+        },
+        {
+          "scrollTo": {
+            "selector": "#panel-phone"
+          },
+          "offset": 20
+        }
+      ]
+    },
+    {
+      "name": "slot-filled",
+      "device": "phone-card",
+      "steps": [
+        {
+          "click": "Thu 2:30 PM"
+        },
+        {
+          "wait": 2500
+        },
+        {
+          "click": "See the front desk"
+        },
+        {
+          "wait": 800
+        },
+        {
+          "scrollTo": "Tuesday's schedule",
+          "offset": 12
+        }
+      ]
+    }
+  ],
+  "video": {
+    "device": "desktop",
+    "seconds": 4.5,
+    "steps": [
+      {
+        "goto": "https://no-show-rescue.vercel.app/demo"
+      }
+    ]
+  },
+  "reel": {
+    "steps": [
+      {
+        "goto": "https://no-show-rescue.vercel.app/demo"
+      },
+      {
+        "wait": 2500
+      },
+      {
+        "click": "Don't reply"
+      },
+      {
+        "wait": 1500
+      },
+      {
+        "click": "Skip ahead 15 minutes"
+      },
+      {
+        "wait": 4000
+      },
+      {
+        "click": "Thu 2:30 PM"
+      },
+      {
+        "wait": 2500
+      },
+      {
+        "click": "See the front desk"
+      },
+      {
+        "wait": 800
+      }
+    ]
+  }
+}
