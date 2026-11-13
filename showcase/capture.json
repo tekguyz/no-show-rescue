@@ -1,13 +1,11 @@
 {
   "app": "no-show-rescue",
-  "takenAt": "2026-11-13T08:33:56.273Z",
+  "takenAt": "2026-11-13T23:30:00.880Z",
   "pictures": [
     "reminder-desktop-light",
-    "new-time-desktop-light",
-    "slot-filled-desktop-light",
-    "new-time-phone-light",
-    "front-desk-phone-light",
-    "new-time-feed-light",
-    "new-time-stories-light"
+    "reminder-feed-light",
+    "reminder-stories-light",
+    "reminder-stories-light",
+    "reminder-phone-card-light"
   ]
 }
