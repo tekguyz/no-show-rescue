@@ -100,7 +100,7 @@ export function DemoApp() {
             <li
               key={label}
               aria-current={i === done ? "step" : undefined}
-              className={`rounded-md px-3 py-1.5 font-semibold ${i < done ? "bg-brand-soft text-ink" : i === done ? "bg-ink text-paper" : "bg-sunk text-ink-muted"}`}
+              className={`rounded-full px-3 py-1.5 font-semibold ${i < done ? "bg-brand-soft text-brand" : i === done ? "bg-ink text-paper" : "bg-sunk text-ink-muted"}`}
             >
               {i + 1}. {label}
             </li>
@@ -109,7 +109,7 @@ export function DemoApp() {
 
         <ClockBar run={run} typing={typing} onSkip={skip} />
 
-        <div role="tablist" aria-label="Demo view" className="mt-5 grid grid-cols-2 gap-1 rounded-lg bg-sunk p-1 lg:hidden">
+        <div role="tablist" aria-label="Demo view" className="mt-5 grid grid-cols-2 gap-1 rounded-full bg-sunk p-1 lg:hidden">
           {(
             [
               ["phone", "Patient's phone"],
@@ -124,7 +124,7 @@ export function DemoApp() {
               aria-selected={tab === id}
               aria-controls={`panel-${id}`}
               onClick={() => showTab(id)}
-              className={`relative min-h-11 rounded-lg text-label ${tab === id ? "bg-surface text-ink" : "text-ink-muted"}`}
+              className={`relative min-h-11 rounded-full text-label ${tab === id ? "bg-surface text-ink shadow-sm" : "text-ink-muted"}`}
             >
               {label}
               {id === "desk" && unseen && tab !== "desk" && <span className="absolute top-2.5 right-4 size-2.5 rounded-full bg-gap" aria-label="Something changed" />}
@@ -160,9 +160,9 @@ function ClockBar({ run, typing, onSkip }: { run: Run; typing: boolean; onSkip: 
   const label = run.phase === "visit-day" ? "Skip ahead 15 minutes" : "Skip to after the next visit";
 
   return (
-    <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3 rounded-md border-[1.5px] border-ink bg-surface px-4 py-3">
+    <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-3 rounded-2xl border border-line bg-surface px-4 py-3">
       <p className="flex items-center gap-2 font-display text-title">
-        <ClockIcon className="text-ink" /> {run.clock}
+        <ClockIcon className="text-brand" /> {run.clock}
       </p>
       <p className="min-w-[16rem] flex-1 text-label font-normal text-ink-muted" role="status">
         {hint}
@@ -172,7 +172,7 @@ function ClockBar({ run, typing, onSkip }: { run: Run; typing: boolean; onSkip: 
           type="button"
           onClick={onSkip}
           disabled={!ready}
-          className="inline-flex min-h-11 items-center justify-center rounded-lg bg-brand px-5 text-label font-semibold text-ink transition-colors hover:bg-brand-deep disabled:cursor-not-allowed disabled:bg-sunk disabled:text-ink-muted"
+          className="inline-flex min-h-11 items-center justify-center rounded-full bg-ink px-5 text-label text-paper transition-colors hover:bg-night-raised disabled:cursor-not-allowed disabled:bg-sunk disabled:text-ink-muted"
         >
           {label}
         </button>
