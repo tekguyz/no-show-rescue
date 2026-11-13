@@ -31,7 +31,7 @@ export function Phone({ run, shown, onReply, onSeeDesk }: Props) {
   }, [shown, typing]);
 
   return (
-    <div className="mx-auto w-full max-w-[22rem] rounded-[2.75rem] bg-night p-2.5">
+    <div className="mx-auto w-full max-w-[22rem] rounded-[2.75rem] bg-night p-2.5 shadow-[0_24px_60px_-20px_rgb(19_38_43/0.45)]">
       <div className="flex h-[min(38rem,calc(100dvh-2.5rem))] min-h-[30rem] flex-col overflow-hidden rounded-[2.25rem] bg-night text-on-night">
         <div className="flex items-center justify-between px-6 pt-3 pb-1 text-micro text-on-night-muted" aria-hidden>
           <span className="font-semibold">{run.clock.split(" ").slice(1).join(" ") || run.clock}</span>
@@ -40,7 +40,7 @@ export function Phone({ run, shown, onReply, onSeeDesk }: Props) {
         </div>
 
         <div className="flex items-center gap-3 border-b border-night-line px-4 py-3">
-          <span className="flex size-9 items-center justify-center rounded-md bg-night-raised font-display text-label">P</span>
+          <span className="flex size-9 items-center justify-center rounded-full bg-night-raised font-display text-label">P</span>
           <div>
             <p className="text-label">{business.name}</p>
             <p className="text-micro text-on-night-muted">Text message</p>
@@ -57,7 +57,7 @@ export function Phone({ run, shown, onReply, onSeeDesk }: Props) {
             <p
               key={i}
               className={`arrive max-w-[85%] rounded-2xl px-3.5 py-2.5 text-label font-normal ${
-                t.from === "patient" ? "self-end bg-night-raised" : "self-start bg-bubble-out text-ink"
+                t.from === "patient" ? "self-end rounded-br-md bg-night-raised" : "self-start rounded-bl-md bg-bubble-out text-white"
               }`}
             >
               {t.text}
@@ -73,7 +73,7 @@ export function Phone({ run, shown, onReply, onSeeDesk }: Props) {
               <button
                 type="button"
                 onClick={() => setLinkTapped(true)}
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-on-night-muted px-4 text-label text-on-night hover:bg-night-raised"
+                className="inline-flex min-h-11 items-center gap-2 rounded-2xl border border-on-night-muted px-4 text-label text-on-night hover:bg-night-raised"
               >
                 <StarIcon width={16} height={16} /> Leave a review
               </button>
@@ -92,7 +92,7 @@ export function Phone({ run, shown, onReply, onSeeDesk }: Props) {
                     key={o.id}
                     type="button"
                     onClick={() => onReply(o.id)}
-                    className="min-h-11 rounded-lg border border-on-night-muted px-4 text-label text-on-night transition-colors hover:bg-night-raised"
+                    className="min-h-11 rounded-full border border-on-night-muted px-4 text-label text-on-night transition-colors hover:bg-night-raised"
                   >
                     {o.label}
                   </button>
@@ -103,7 +103,7 @@ export function Phone({ run, shown, onReply, onSeeDesk }: Props) {
             <div className="flex min-h-11 flex-col gap-2">
               <p className="text-micro text-on-night-muted">{typing ? " " : idleLine(run)}</p>
               {!typing && run.phase !== "reminder" && (
-                <button type="button" onClick={onSeeDesk} className="min-h-11 rounded-lg bg-on-night text-label text-ink lg:hidden">
+                <button type="button" onClick={onSeeDesk} className="min-h-11 rounded-full bg-on-night text-label text-ink lg:hidden">
                   See the front desk
                 </button>
               )}

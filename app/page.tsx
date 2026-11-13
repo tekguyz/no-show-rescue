@@ -41,7 +41,7 @@ export default function LandingPage() {
       <main id="main" className="flex-1">
         <section className="mx-auto grid w-full max-w-[72rem] items-center gap-12 px-4 pt-8 pb-16 sm:px-6 lg:grid-cols-[minmax(0,1fr)_26rem] lg:pt-14 lg:pb-24">
           <div>
-            <p className="text-label text-ink">For dental and vet practices</p>
+            <p className="text-label text-brand">For dental and vet practices</p>
             <h1 className="mt-3 max-w-[13ch] font-display text-display">Fewer empty chairs.</h1>
             <p className="mt-5 max-w-[52ch] text-body text-ink-muted">
               Patients get a reminder before a visit. When someone doesn&apos;t come, they get a new time offered by text, and the open
@@ -65,7 +65,7 @@ export default function LandingPage() {
             <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((s, i) => (
                 <li key={s.title} className="flex flex-col gap-2">
-                  <span className={`flex size-9 items-center justify-center rounded-md font-display text-label ${i === 1 ? "bg-gap-soft text-gap" : "bg-brand-soft text-ink"}`}>
+                  <span className={`flex size-9 items-center justify-center rounded-full font-display text-label ${i === 1 ? "bg-gap-soft text-gap" : "bg-brand-soft text-brand"}`}>
                     {i + 1}
                   </span>
                   <h3 className="font-display text-title">{s.title}</h3>
@@ -84,7 +84,7 @@ export default function LandingPage() {
             <ul className="mt-6 flex flex-col gap-4">
               {deskGets.map((line) => (
                 <li key={line.text} className="flex gap-3 text-body">
-                  <span className="mt-0.5 shrink-0 text-ink">{line.icon}</span>
+                  <span className="mt-0.5 shrink-0 text-brand">{line.icon}</span>
                   {line.text}
                 </li>
               ))}
@@ -126,21 +126,21 @@ export default function LandingPage() {
 function HeroPreview() {
   return (
     <div aria-hidden className="relative mx-auto w-full max-w-[24rem]">
-      <div className="rounded-[2.5rem] bg-night p-2.5">
+      <div className="rounded-[2.5rem] bg-night p-2.5 shadow-[0_24px_60px_-20px_rgb(19_38_43/0.45)]">
         <div className="flex flex-col gap-3 rounded-[2rem] bg-night px-4 pt-5 pb-28 text-on-night">
           <p className="text-micro font-semibold text-on-night-muted">{business.name} · Text message</p>
-          <p className="max-w-[85%] rounded-2xl bg-bubble-out px-3.5 py-2.5 text-label font-normal text-ink">
+          <p className="max-w-[85%] rounded-2xl rounded-bl-md bg-bubble-out px-3.5 py-2.5 text-label font-normal text-white">
             Hi Lena, we missed you at 10:00 AM today. No worries. Want a new time?
           </p>
-          <p className="self-end rounded-2xl bg-night-raised px-3.5 py-2.5 text-label font-normal">Thu 2:30 PM</p>
-          <p className="max-w-[85%] rounded-2xl bg-bubble-out px-3.5 py-2.5 text-label font-normal text-ink">
+          <p className="self-end rounded-2xl rounded-br-md bg-night-raised px-3.5 py-2.5 text-label font-normal">Thu 2:30 PM</p>
+          <p className="max-w-[85%] rounded-2xl rounded-bl-md bg-bubble-out px-3.5 py-2.5 text-label font-normal text-white">
             You&apos;re booked for Thu 2:30 PM. We&apos;ll send a reminder the day before.
           </p>
         </div>
       </div>
-      <div className="absolute inset-x-6 bottom-6 rounded-md border-[1.5px] border-ink bg-surface p-4 text-ink">
+      <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-line bg-surface p-4 text-ink shadow-lg">
         <p className="flex items-center gap-2 text-label">
-          <UsersIcon width={16} height={16} className="text-ink" /> Open chair filled from the waitlist
+          <UsersIcon width={16} height={16} className="text-brand" /> Open chair filled from the waitlist
         </p>
         <p className="mt-1 text-label font-normal text-ink-muted">Marco T. took 10:45 AM, hygiene chair.</p>
       </div>
@@ -156,9 +156,9 @@ function SchedulePreview() {
     ["11:00 AM", "Dev P.", "Confirmed", "muted"],
   ] as const;
   return (
-    <div aria-hidden className="rounded-md border-[1.5px] border-ink bg-surface p-4">
+    <div aria-hidden className="rounded-2xl border border-line bg-surface p-4">
       <p className="flex items-center gap-2 font-display text-title">
-        <CalendarIcon className="text-ink" /> Tuesday
+        <CalendarIcon className="text-brand" /> Tuesday
       </p>
       <ul className="mt-3">
         {rows.map(([time, name, badge, tone]) => (
@@ -167,7 +167,7 @@ function SchedulePreview() {
               <span className="w-18 shrink-0">{time}</span>
               <span className="truncate">{name}</span>
             </span>
-            <span className={`shrink-0 rounded-md px-2.5 py-1 text-micro font-semibold ${tone === "brand" ? "bg-brand-soft text-ink" : "bg-sunk text-ink-muted"}`}>{badge}</span>
+            <span className={`shrink-0 rounded-full px-2.5 py-1 text-micro font-semibold ${tone === "brand" ? "bg-brand-soft text-brand" : "bg-sunk text-ink-muted"}`}>{badge}</span>
           </li>
         ))}
       </ul>

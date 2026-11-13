@@ -24,8 +24,8 @@ const lenaBadge: Record<LenaStatus, Row["badge"]> = {
 };
 
 const tones = {
-  ok: "bg-brand-soft text-ink",
-  brand: "bg-brand-soft text-ink",
+  ok: "bg-brand-soft text-brand",
+  brand: "bg-brand-soft text-brand",
   gap: "bg-gap-soft text-gap",
   muted: "bg-sunk text-ink-muted",
 } as const;
@@ -65,7 +65,7 @@ export function Desk({ run }: { run: Run }) {
                     {r.what} · {r.chair}
                   </span>
                 </span>
-                {r.badge && <span className={`col-start-2 justify-self-start rounded-md px-2.5 py-1 text-micro font-semibold sm:col-start-3 ${tones[r.badge.tone]}`}>{r.badge.text}</span>}
+                {r.badge && <span className={`col-start-2 justify-self-start rounded-full px-2.5 py-1 text-micro font-semibold sm:col-start-3 ${tones[r.badge.tone]}`}>{r.badge.text}</span>}
                 {r.fresh && <span aria-hidden className="hairline-draw absolute inset-x-0 bottom-0 h-0.5 bg-brand" />}
               </li>
             ))}
@@ -84,7 +84,7 @@ export function Desk({ run }: { run: Run }) {
                       <span className="block text-label">{w.name}</span>
                       <span className="block text-micro text-ink-muted">{w.wants}</span>
                     </span>
-                    <span className={`shrink-0 rounded-md px-2.5 py-1 text-micro font-semibold ${took ? tones.ok : tones.muted}`}>{status}</span>
+                    <span className={`shrink-0 rounded-full px-2.5 py-1 text-micro font-semibold ${took ? tones.ok : tones.muted}`}>{status}</span>
                   </li>
                 );
               })}
@@ -103,7 +103,7 @@ export function Desk({ run }: { run: Run }) {
               <dd>{reviewLine(run)}</dd>
             </dl>
             {run.review === "feedback-sent" && (
-              <p className="arrive mt-3 rounded-md bg-gap-soft px-3 py-2 text-label font-normal text-ink">
+              <p className="arrive mt-3 rounded-xl bg-gap-soft px-3 py-2 text-label font-normal text-ink">
                 Private feedback for {business.frontDesk}: &ldquo;{run.thread.at(-2)?.text}&rdquo;
               </p>
             )}
@@ -135,9 +135,9 @@ function reviewLine(run: Run): string {
 
 function Card({ title, icon, note, children }: { title: string; icon: React.ReactNode; note?: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-md border-[1.5px] border-ink bg-surface p-4 sm:p-5">
+    <section className="rounded-2xl border border-line bg-surface p-4 sm:p-5">
       <h2 className="flex items-center gap-2 font-display text-title">
-        <span className="text-ink">{icon}</span> {title}
+        <span className="text-brand">{icon}</span> {title}
       </h2>
       {note && <p className="mt-0.5 text-micro text-ink-muted">{note}</p>}
       <div className="mt-3">{children}</div>
