@@ -126,14 +126,14 @@ export default function LandingPage() {
 function HeroPreview() {
   return (
     <div aria-hidden className="relative mx-auto w-full max-w-[24rem]">
-      <div className="rounded-md bg-night p-2.5">
-        <div className="flex flex-col gap-3 rounded-sm bg-night px-4 pt-5 pb-28 text-on-night">
+      <div className="rounded-[2.5rem] bg-night p-2.5">
+        <div className="flex flex-col gap-3 rounded-[2rem] bg-night px-4 pt-5 pb-28 text-on-night">
           <p className="text-micro font-semibold text-on-night-muted">{business.name} · Text message</p>
-          <p className="max-w-[85%] rounded-md bg-bubble-out px-3.5 py-2.5 text-label font-normal text-ink">
+          <p className="max-w-[85%] rounded-2xl bg-bubble-out px-3.5 py-2.5 text-label font-normal text-ink">
             Hi Lena, we missed you at 10:00 AM today. No worries. Want a new time?
           </p>
-          <p className="self-end rounded-md bg-night-raised px-3.5 py-2.5 text-label font-normal">Thu 2:30 PM</p>
-          <p className="max-w-[85%] rounded-md bg-bubble-out px-3.5 py-2.5 text-label font-normal text-ink">
+          <p className="self-end rounded-2xl bg-night-raised px-3.5 py-2.5 text-label font-normal">Thu 2:30 PM</p>
+          <p className="max-w-[85%] rounded-2xl bg-bubble-out px-3.5 py-2.5 text-label font-normal text-ink">
             You&apos;re booked for Thu 2:30 PM. We&apos;ll send a reminder the day before.
           </p>
         </div>
