@@ -40,7 +40,7 @@ Picked against `claude-config/LOOKS.md`. Closest row: the old teal version of th
 | Accent | Coral `#ff5b4a`, for the one main action and filled-slot moments |
 | Display font | Outfit, 600 and 700 |
 | Body font | Outfit, 400 (one family for the whole demo) |
-| Shape | 6px corners. Secondary buttons outlined (2px, text color); the main action filled coral. Panels outlined 1.5px instead of shadowed. No pill buttons |
+| Shape | 8px buttons, 6px panels, a rounded phone. Secondary buttons outlined (2px, text color); the main action filled coral. Panels outlined 1.5px instead of shadowed. No pill buttons |
 
 ## The idea
 
@@ -60,7 +60,7 @@ Outfit only: 700 for display, headline and title; 600 for labels; 400 for body. 
 
 ## Shape
 
-6px corners on everything (`rounded-md`), including the phone. Panels are outlined 1.5px in `ink`; row dividers use `line`. Secondary buttons are outlined 2px in `ink`. The main action is filled coral. No pill buttons, no shadows. Round only a status dot.
+Buttons and tabs are 8px (`rounded-lg`), outlined 2px in `ink` when secondary; the main action is filled coral. Panels are 6px (`rounded-md`) and outlined 1.5px in `ink`; row dividers use `line`. The phone is a real phone shape: a 44px body, a 36px screen, a pill notch and 16px message bubbles. No pill buttons, no shadows. Round only a status dot. Changed 2026-11-13 at the founder's request (buttons and phone were too square).
 
 ## Layout
 

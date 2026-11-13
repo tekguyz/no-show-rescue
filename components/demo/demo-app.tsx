@@ -109,7 +109,7 @@ export function DemoApp() {
 
         <ClockBar run={run} typing={typing} onSkip={skip} />
 
-        <div role="tablist" aria-label="Demo view" className="mt-5 grid grid-cols-2 gap-1 rounded-md bg-sunk p-1 lg:hidden">
+        <div role="tablist" aria-label="Demo view" className="mt-5 grid grid-cols-2 gap-1 rounded-lg bg-sunk p-1 lg:hidden">
           {(
             [
               ["phone", "Patient's phone"],
@@ -124,7 +124,7 @@ export function DemoApp() {
               aria-selected={tab === id}
               aria-controls={`panel-${id}`}
               onClick={() => showTab(id)}
-              className={`relative min-h-11 rounded-md text-label ${tab === id ? "bg-surface text-ink" : "text-ink-muted"}`}
+              className={`relative min-h-11 rounded-lg text-label ${tab === id ? "bg-surface text-ink" : "text-ink-muted"}`}
             >
               {label}
               {id === "desk" && unseen && tab !== "desk" && <span className="absolute top-2.5 right-4 size-2.5 rounded-full bg-gap" aria-label="Something changed" />}
@@ -172,7 +172,7 @@ function ClockBar({ run, typing, onSkip }: { run: Run; typing: boolean; onSkip: 
           type="button"
           onClick={onSkip}
           disabled={!ready}
-          className="inline-flex min-h-11 items-center justify-center rounded-md bg-brand px-5 text-label font-semibold text-ink transition-colors hover:bg-brand-deep disabled:cursor-not-allowed disabled:bg-sunk disabled:text-ink-muted"
+          className="inline-flex min-h-11 items-center justify-center rounded-lg bg-brand px-5 text-label font-semibold text-ink transition-colors hover:bg-brand-deep disabled:cursor-not-allowed disabled:bg-sunk disabled:text-ink-muted"
         >
           {label}
         </button>
