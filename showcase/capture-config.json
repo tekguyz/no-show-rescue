@@ -180,18 +180,6 @@
       ]
     },
     {
-      "name": "reminder",
-      "device": "stories",
-      "steps": [
-        {
-          "scrollTo": {
-            "selector": "#panel-phone"
-          },
-          "offset": 20
-        }
-      ]
-    },
-    {
       "name": "new-time",
       "device": "stories",
       "steps": [
